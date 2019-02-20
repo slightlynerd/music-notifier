@@ -1,0 +1,22 @@
+.home {
+	padding: 56px 20px;
+	min-height: 100%;
+	width: 100%;
+}
+.upcoming {
+	display: flex;
+	flex-wrap: wrap;
+}
+.upcomingContainer {
+	width: 150px;
+	margin: 10px;
+}
+.img {
+	width: 150px;
+	height: 150px;
+}
+.toast {
+	background-color: darkslategray;
+	padding: 15px;
+	color: #FCFCFC;
+}

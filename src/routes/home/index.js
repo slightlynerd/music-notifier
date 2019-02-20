@@ -16,15 +16,13 @@ export default class Home extends Component {
 		msg: 'Loading data...'
 	};
 
-	async componentWillMount() {
-		try {
-			const response = await fetch('https://rest-in-nodejs.herokuapp.com/last-fm');
-			const json = await response.json();
-			this.setState({ loading: false, metadata: json, msg: 'Loaded data!' });
-		}
-		catch (err) {
-			this.setState({ msg: 'error loading data' });
-		}
+	componentWillMount() {
+		fetch('https://rest-in-nodejs.herokuapp.com/last-fm')
+			.then(response => response.json())
+			.then(res => {
+				this.setState({ loading: false, metadata: res, msg: 'Loaded data!' });
+			})
+			.catch(_ => this.setState({ msg: 'error loading data' }));
 	}
 
 	render(props, state) {

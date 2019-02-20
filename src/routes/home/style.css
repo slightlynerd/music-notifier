@@ -3,20 +3,36 @@
 	min-height: 100%;
 	width: 100%;
 }
-.upcoming {
+h1 {
+	color: #FAFAFA;
+}
+.album {
 	display: flex;
 	flex-wrap: wrap;
 }
-.upcomingContainer {
+.album-container {
+	text-align: center;
 	width: 150px;
 	margin: 10px;
 }
-.img {
+.album-header {
+	color: #FAFAFA;
+	margin: 10px auto;
+}
+.album-image {
 	width: 150px;
 	height: 150px;
 }
+.album-artist {
+	color: #EEEEEE;
+	margin: 5px auto;
+}
+.album-date {
+	color: #BDBDBD;
+	font-size: 12px;
+}
 .toast {
-	background-color: darkslategray;
+	background-color: #FAFAFA;
 	padding: 15px;
-	color: #FCFCFC;
+	color: #312143;
 }

@@ -29,11 +29,13 @@ export default class Home extends Component {
 
 	render(props, state) {
 		const list = state.metadata.map((item) => {
-			
+			let obj = item;
 			return (
-				<div class={style.upcomingContainer}>
-					<img class={style.img} src={item.coverArt} alt={item.title} />
-					<h4>{item.title}</h4>
+				<div class={style['album-container']}>
+					<img class={style['album-image']} src={obj.coverArt} alt={obj.title} />
+					<h4 class={style['album-header']}>{obj.title}</h4>
+					<p class={style['album-artist']}>{obj.artist}</p>
+					<p class={style['album-date']}>{obj.releaseDate}</p>
 				</div>
 			);
 		});
@@ -41,7 +43,7 @@ export default class Home extends Component {
 		return (
 			<div class={style.home}>
 				<h1>Home</h1>
-				<div class={style.upcoming}>
+				<div class={style.album}>
 					{list}
 				</div>
 				<Toast msg={state.msg} loading={state.loading} />

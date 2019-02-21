@@ -16,7 +16,7 @@ export default class Home extends Component {
 		msg: 'Loading data...'
 	};
 
-	componentWillMount() {
+	componentDidMount() {
 		fetch('https://rest-in-nodejs.herokuapp.com/last-fm')
 			.then(response => response.json())
 			.then(res => {
@@ -40,7 +40,7 @@ export default class Home extends Component {
 
 		return (
 			<div class={style.home}>
-				<h1>Home</h1>
+				<h2>Coming Soon</h2>
 				<div class={style.album}>
 					{list}
 				</div>

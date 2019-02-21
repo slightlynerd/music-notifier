@@ -1,9 +1,10 @@
 .home {
-	padding: 56px 20px;
+	padding: 28px 20px;
 	min-height: 100%;
 	width: 100%;
+	margin-left: 20%;
 }
-h1 {
+h2 {
 	color: #FAFAFA;
 }
 .album {

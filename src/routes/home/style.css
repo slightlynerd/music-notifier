@@ -14,7 +14,7 @@ h2 {
 .album-container {
 	text-align: center;
 	width: 150px;
-	margin: 10px;
+	margin: 20px;
 }
 .album-header {
 	color: #FAFAFA;
@@ -23,6 +23,7 @@ h2 {
 .album-image {
 	width: 150px;
 	height: 150px;
+	border-radius: 50%;
 }
 .album-artist {
 	color: #EEEEEE;
@@ -31,9 +32,4 @@ h2 {
 .album-date {
 	color: #BDBDBD;
 	font-size: 12px;
-}
-.toast {
-	background-color: #FAFAFA;
-	padding: 15px;
-	color: #312143;
 }

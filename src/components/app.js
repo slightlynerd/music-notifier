@@ -5,6 +5,7 @@ import Header from './header';
 
 // Code-splitting is automated for routes
 import Home from '../routes/home';
+import Detail from '../routes/detail';
 import Profile from '../routes/profile';
 
 export default class App extends Component {
@@ -22,9 +23,12 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-					<Home URL="https://rest-in-node.herokuapp.com/last-fm" path="/" />
+					{/*<Home URL="https://rest-in-node.herokuapp.com/last-fm" path="/" />*/}
+					<Home path="/" />
+					<Detail path="/album/" />
 					<Profile path="/profile/" user="me" />
 					<Profile path="/profile/:user" />
+					<Detail path="/detail/:artist/:album" />
 				</Router>
 			</div>
 		);

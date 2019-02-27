@@ -7,29 +7,3 @@
 h2 {
 	color: #FAFAFA;
 }
-.album {
-	display: flex;
-	flex-wrap: wrap;
-}
-.album-container {
-	text-align: center;
-	width: 150px;
-	margin: 20px;
-}
-.album-header {
-	color: #FAFAFA;
-	margin: 10px auto;
-}
-.album-image {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-}
-.album-artist {
-	color: #EEEEEE;
-	margin: 5px auto;
-}
-.album-date {
-	color: #BDBDBD;
-	font-size: 12px;
-}

@@ -1,61 +1,59 @@
 import { h, Component } from 'preact';
-import PropTypes from 'prop-types';
 import mdl from 'material-design-lite/material';
 import { Dialog } from 'preact-mdl';
+import Albumlist from '../../components/albumlist';
 import Toast from '../../components/toast';
 import style from './style';
 
 class Home extends Component {
 
 	state = {
-		loading: true,
-		metadata: [],
+		loading: false,
+		// metadata: [],
+		metadata: [
+			{ title: 'I, The Mask',
+				coverArt: 'https://lastfm-img2.akamaized.net/i/u/300x300/d5fc67f0812abf1b5b209420acc282aa.jpg',
+				artist: 'In Flames',
+				releaseDate: '28 February 2019'
+			},
+			{ title: 'placeholder',
+				coverArt: 'https://lastfm-img2.akamaized.net/i/u/300x300/41421144e53f67a934a19b748b4a8c2b.jpg',
+				artist: 'Hand Habits',
+				releaseDate: '28 February 2019'
+			},
+			{ title: 'Shine A Light',
+				coverArt: 'https://lastfm-img2.akamaized.net/i/u/300x300/a429533b2d4ce5c17370cc89e1bc1c35.jpg',
+				artist: 'Bryan Adams',
+				releaseDate: '28 February 2019'
+			},
+			{	title: 'Peace',
+				coverArt: 'https://lastfm-img2.akamaized.net/i/u/300x300/8d8df7a23584d6d96a637c965d5051e0.jpg',
+				artist: 'Demon Hunter',
+				releaseDate: '28 February 2019'
+			}
+		],
 		msg: 'Loading data...'
 	};
 
-	moreInfo = e => {
-		// this.refs.dialog.showModal();
-	};
-
 	componentDidMount() {
-		fetch(this.props.URL)
-			.then(response => response.json())
-			.then(res => {
-				this.setState({ loading: false, metadata: res, msg: 'Loaded data!' });
-			})
-			.catch(_ => this.setState({ loading: false, msg: 'error loading data' }));
+		// fetch(this.props.URL)
+		// 	.then(response => response.json())
+		// 	.then(res => {
+		// 		this.setState({ loading: false, metadata: res, msg: 'Loaded data!' });
+		// 	})
+		// 	.catch(_ => this.setState({ loading: false, msg: 'error loading data' }));
 	}
 
 	render(props, state) {
-		const list = state.metadata.map((item) => {
-			let obj = item;
-			return (
-				<div class={style['album-container']}>
-					<img class={style['album-image']} src={obj.coverArt} alt={obj.title} />
-					<a onClick={this.moreInfo}>
-						<h4 class={style['album-header']}>{obj.title}</h4>
-					</a>
-					<p class={style['album-artist']}>{obj.artist}</p>
-					<p class={style['album-date']}>{obj.releaseDate}</p>
-				</div>
-			);
-		});
 
 		return (
 			<div class={style.home}>
 				<h2>Coming Soon</h2>
-				<Dialog />
-				<div class={style.album}>
-					{list}
-				</div>
+				<Albumlist metadata={state.metadata} />
 				<Toast msg={state.msg} loading={state.loading} />
 			</div>
 		);
 	}
 }
-
-Home.propTypes = {
-	URL: PropTypes.string
-};
 
 export default Home;

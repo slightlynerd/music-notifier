@@ -16,7 +16,7 @@ const Header = () => (
 				<Icon icon="bookmark" />
 				<span>Bookmarks</span>
 			</Link>
-			<Link activeClassName={style.active} href="/profile">
+			<Link activeClassName={style.active} href="/profile/john">
 				<Icon icon="search" />
 				<span>Search</span>
 			</Link>
